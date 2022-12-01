@@ -13,7 +13,7 @@ const TaskItem = ({ addedTask, editedText, setEditedText }) => {
   return (
     <div className='w-full mx-auto p-5 bg-slate-800 flex justify-between mb-3 rounded hover:bg-gradient-to-r from-cyan-900 to-slate-800'>
       <div className='flex gap-3'>
-        <input type="checkbox" checked={isChecked} onChange={(e) => setIsChecked(!isChecked)} />
+        <input type="checkbox" checked={isChecked} onChange={() => setIsChecked(!isChecked)} />
         {
           !addedTask.isEditable ? (
             !isChecked ? <p className='text-slate-200'>{addedTask.text}</p> : <p className='line-through text-cyan-400'>{addedTask.text}</p>

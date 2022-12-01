@@ -1,4 +1,5 @@
 import React from 'react';
+import Spinner from '../utilitis/Spinner';
 import TaskItem from './TaskItem';
 
 const TaskList = ({ addedTasks, loading, error, editedText, setEditedText }) => {
@@ -7,7 +8,7 @@ const TaskList = ({ addedTasks, loading, error, editedText, setEditedText }) => 
       {
         loading
           ?
-          <p className='text-center'>{error ? error : 'Loading...'}</p>
+          <p className='text-center'>{error ? error : <Spinner />}</p>
           :
           addedTasks.length === 0 && <p className='text-center'>No task to show.</p>
       }
